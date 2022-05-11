@@ -1,7 +1,7 @@
 package com.tomgregory;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,46 +12,46 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 public class ThemeParkApplicationIT {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Test
-    public void getsAllRides() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/ride")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andReturn();
-    }
-
-    @Test
-    public void getsSingleRide() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/ride/1")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andReturn();
-    }
-
-    @Test
-    public void returnsNotFoundForInvalidSingleRide() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/ride/4")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound())
-                .andReturn();
-    }
-
-    @Test
-    public void addsNewRide() throws Exception {
-        String newRide = "{\"name\":\"Monorail\",\"description\":\"Sedate travelling ride.\",\"thrillFactor\":2,\"vomitFactor\":1}";
-        mockMvc.perform(MockMvcRequestBuilders.post("/ride")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(newRide)
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andReturn();
-    }
+//    @Autowired
+//    private MockMvc mockMvc;
+//
+//    @Test
+//    public void getsAllRides() throws Exception {
+//        mockMvc.perform(MockMvcRequestBuilders.get("/ride")
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andReturn();
+//    }
+//
+//    @Test
+//    public void getsSingleRide() throws Exception {
+//        mockMvc.perform(MockMvcRequestBuilders.get("/ride/1")
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andReturn();
+//    }
+//
+//    @Test
+//    public void returnsNotFoundForInvalidSingleRide() throws Exception {
+//        mockMvc.perform(MockMvcRequestBuilders.get("/ride/4")
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isNotFound())
+//                .andReturn();
+//    }
+//
+//    @Test
+//    public void addsNewRide() throws Exception {
+//        String newRide = "{\"name\":\"Monorail\",\"description\":\"Sedate travelling ride.\",\"thrillFactor\":2,\"vomitFactor\":1}";
+//        mockMvc.perform(MockMvcRequestBuilders.post("/ride")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(newRide)
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andReturn();
+//    }
 }
