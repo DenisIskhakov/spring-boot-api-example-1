@@ -18,6 +18,8 @@ public class ThemeParkRideController {
     }
 
     //
+//
+//
     @GetMapping(value = "/ride", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<ThemeParkRide> getRides() {
         return themeParkRideRepository.findAll();
